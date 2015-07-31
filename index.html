@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Json-smart by netplex</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Json-smart</h1>
+        <h2>json-smart doc</h2>
+        <a href="https://github.com/netplex/json-smart" class="button"><small>View project on</small> GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h3>
+<a id="overview" class="anchor" href="#overview" aria-hidden="true"><span class="octicon octicon-link"></span></a>Overview</h3>
+
+<p>Json-smart is a performance focused, JSON processor lib.
+[GettingStart Getting Start guide]</p>
+
+<p>Json-smart interfaces are almost the same that json-simple, So migration from json-simple to json-smart, is very easy. <a href="http://code.google.com/p/json-smart/wiki/MigratingFromJsonSimpleToJsonSmart">Migration Guide Available</a></p>
+
+<p>Json-smart is one of the <em>fastest</em> java base Json API.
+See bench for more details. <a href="http://code.google.com/p/json-smart/wiki/Benchmark">Benchmarks</a></p>
+
+<h3>
+<a id="json-smart-overview" class="anchor" href="#json-smart-overview" aria-hidden="true"><span class="octicon octicon-link"></span></a>json-smart overview</h3>
+
+<ul>
+<li>Fast <em>(it's at least <em>twice</em> faster)</em> than the original json-simple <a href="http://code.google.com/p/json-smart/wiki/Benchmark">See Benchmarks</a>
+</li>
+<li>Use java Generics.</li>
+<li>Parser permissibility is highly customisable from permissive to strict.</li>
+<li>The <em>json generator</em> can generate <em>compressed</em> json data.</li>
+<li>Interfaces are the same, so json-simple projects can be easily port to json-smart.</li>
+<li>It uses <em>maven</em> build.</li>
+<li>Is available on maven central
+ 
+  net.minidev
+  json-smart
+  1.3
+ </li>
+</ul>
+
+<h3>
+<a id="lasts-changes" class="anchor" href="#lasts-changes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Lasts changes</h3>
+
+<p><a href="http://code.google.com/p/json-smart/wiki/Changelog">Changelog</a></p>
+
+<p>current stable version: 1.3.1 / 2.1.0</p>
+
+<p>current V2 version is available on Maven central: 
+     
+      net.minidev
+      json-smart
+      2.2
+     </p>
+
+<p>|| json-smart Version || <em>1.X</em> || <em>2.X</em> ||
+|| interface    || extanded version of <em>json-simple</em> || new interface ||
+|| serialization || map, array, beans || map, array, beans ||
+|| de-serialization || map, array || map, array, <em>beans</em> ||
+|| speed        || || same as V 1.1, and faster on beans ||
+|| usage        || can easily replace json-simple || usage of POJO ||</p>
+
+<h3>
+<a id="study-case" class="anchor" href="#study-case" aria-hidden="true"><span class="octicon octicon-link"></span></a>Study case</h3>
+
+<p>I use this parser to process small json data stored in MySQL String records, limited to 255 chars.</p>
+
+<p>In my case, every record contains simple JSon Object like:
+    {"first":"john", "last":"Doe"} # 30 chars long</p>
+
+<p>I have rewritten the generator and the parser to also support smaller json data:</p>
+
+<pre><code>{first:john,last:Doe} # 21 chars long
+</code></pre>
+
+<p>So, I was able to reduce the json data size by <em>30%</em></p>
+
+<p><strong>Generation of simplified json string is only supported by the full json-smart version.</strong></p>
+
+<h3>
+<a id="features" class="anchor" href="#features" aria-hidden="true"><span class="octicon octicon-link"></span></a>Features</h3>
+
+<ul>
+<li>
+<em>No</em> external dependance</li>
+<li>Very small <em>17 KB</em> for light version <em>30 KB</em> for full version</li>
+<li>Posibility to read every json data <a href="http://code.google.com/p/json-smart/wiki/FeaturesTests">FeaturesTests</a>
+</li>
+<li>Realy fast <a href="http://code.google.com/p/json-smart/wiki/Benchmark">Benchmark</a>
+</li>
+<li>Required JDK 1.5</li>
+</ul>
+
+<h3>
+<a id="references" class="anchor" href="#references" aria-hidden="true"><span class="octicon octicon-link"></span></a><a href="https://code.google.com/p/json-smart/wiki/References">References</a>
+</h3>
+
+<p>== Samples ==</p>
+
+<ul>
+<li> <a href="http://code.google.com/p/json-smart/wiki/EncodingSamples">Encoding</a>
+</li>
+<li> <a href="http://code.google.com/p/json-smart/wiki/MergeSample">Merge</a>
+</li>
+</ul>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/netplex/json-smart/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/netplex/json-smart/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/netplex/json-smart"></a> is maintained by <a href="https://github.com/netplex">netplex</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+            <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-6896267-23");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
